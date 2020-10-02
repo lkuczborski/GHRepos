@@ -13,6 +13,10 @@
 		8BDF24FD2524702600C88C54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BDF24FC2524702600C88C54 /* Preview Assets.xcassets */; };
 		8BDF25082524702600C88C54 /* CombineDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF25072524702600C88C54 /* CombineDemoTests.swift */; };
 		8BDF25132524702600C88C54 /* CombineDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF25122524702600C88C54 /* CombineDemoUITests.swift */; };
+		8BDF2524252473A400C88C54 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF2523252473A400C88C54 /* Repository.swift */; };
+		8BDF252C2524782D00C88C54 /* RepositoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF252B2524782D00C88C54 /* RepositoryListViewModel.swift */; };
+		8BDF25312524789800C88C54 /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF25302524789800C88C54 /* GitHubService.swift */; };
+		8BDF25392524A0A300C88C54 /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF25382524A0A300C88C54 /* RepositoryViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,10 @@
 		8BDF250E2524702600C88C54 /* CombineDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CombineDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BDF25122524702600C88C54 /* CombineDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineDemoUITests.swift; sourceTree = "<group>"; };
 		8BDF25142524702600C88C54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BDF2523252473A400C88C54 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		8BDF252B2524782D00C88C54 /* RepositoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListViewModel.swift; sourceTree = "<group>"; };
+		8BDF25302524789800C88C54 /* GitHubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubService.swift; sourceTree = "<group>"; };
+		8BDF25382524A0A300C88C54 /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +103,9 @@
 		8BDF24F42524702500C88C54 /* CombineDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8BDF25422524A0C400C88C54 /* Networking */,
+				8BDF25412524A0BF00C88C54 /* ViewModel */,
+				8BDF25402524A0BA00C88C54 /* Model */,
 				8BDF24F52524702500C88C54 /* CombineDemoApp.swift */,
 				8BDF24F72524702500C88C54 /* ContentView.swift */,
 				8BDF24F92524702600C88C54 /* Assets.xcassets */,
@@ -128,6 +139,31 @@
 				8BDF25142524702600C88C54 /* Info.plist */,
 			);
 			path = CombineDemoUITests;
+			sourceTree = "<group>";
+		};
+		8BDF25402524A0BA00C88C54 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8BDF2523252473A400C88C54 /* Repository.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8BDF25412524A0BF00C88C54 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8BDF25382524A0A300C88C54 /* RepositoryViewModel.swift */,
+				8BDF252B2524782D00C88C54 /* RepositoryListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8BDF25422524A0C400C88C54 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				8BDF25302524789800C88C54 /* GitHubService.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +295,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BDF25312524789800C88C54 /* GitHubService.swift in Sources */,
+				8BDF252C2524782D00C88C54 /* RepositoryListViewModel.swift in Sources */,
+				8BDF25392524A0A300C88C54 /* RepositoryViewModel.swift in Sources */,
 				8BDF24F82524702500C88C54 /* ContentView.swift in Sources */,
+				8BDF2524252473A400C88C54 /* Repository.swift in Sources */,
 				8BDF24F62524702500C88C54 /* CombineDemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

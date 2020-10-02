@@ -8,9 +8,35 @@
 import SwiftUI
 
 struct ContentView: View {
+        
+    @ObservedObject var viewModel = RepositoryListViewModel()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        if viewModel.repositories.isEmpty {
+            Text("Loading repos...")
+                .font(.title3)
+                .padding()
+                .onAppear(perform: {
+                    viewModel.getRepositories(for: "apple")
+                })
+        } else {
+            ScrollView {
+                LazyVStack {
+                    ForEach(viewModel.repositories) { repo in
+                        VStack {
+                            Text(repo.name)
+                                .font(.headline)
+                                .padding()
+                            if let description = repo.description {
+                                Text(description)
+                                    .font(.subheadline)
+                                    .padding()
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
