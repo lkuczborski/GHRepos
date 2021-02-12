@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
         
-    @ObservedObject var viewModel = RepositoryListViewModel()
+    @StateObject var viewModel = RepositoryListViewModel()
     
     var body: some View {
         if viewModel.repositories.isEmpty {
