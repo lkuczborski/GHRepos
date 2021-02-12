@@ -10,7 +10,7 @@ import Foundation
 final class RepositoryListViewModel: ObservableObject {
 
     @Published var repositories = [RepositoryViewModel]()
-    let service: GitHubService
+    private let service: GitHubService
     
     init(service: GitHubService = GitHubService.shared) {
         self.service = service
@@ -22,7 +22,7 @@ final class RepositoryListViewModel: ObservableObject {
             case .failure(let error):
                 print(error)
             case .success(let repositories):
-                self.repositories = repositories.map { RepositoryViewModel($0) }
+                self.repositories = repositories.map(RepositoryViewModel.init)
             }
         }
     }
