@@ -16,13 +16,25 @@ final class RepositoryViewModel: Identifiable {
     }
     
     var name: String {
-        let fullName = model.fullName
-        return fullName.components(separatedBy: "/").last ?? fullName
+        model.name
     }
     
     var description: String? {
         model.description
     }
+    
+    var starsCount: Int {
+        model.starsCount
+    }
+    
+    var forksCount: Int {
+        model.forksCount
+    }
+    
+    var isPrivate: Bool {
+        model.private
+    }
+    
 }
 
 extension RepositoryViewModel {

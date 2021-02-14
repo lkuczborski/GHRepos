@@ -20,7 +20,7 @@ struct ContentView: View {
         if viewModel.repositories.isEmpty {
             loadingText
                 .onAppear(perform: {
-                    viewModel.getRepositories(for: "apple")
+                    viewModel.getRepositories(for: "codequest-eu")
                 })
         } else {
             ScrollView {

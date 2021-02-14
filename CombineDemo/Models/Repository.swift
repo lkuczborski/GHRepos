@@ -7,16 +7,20 @@
 
 import Foundation
 
-struct Repository: Codable {
+struct Repository: Decodable {
     let id: Int
-    let fullName: String
+    let name: String
     let description: String?
+    let starsCount: Int
+    let forksCount: Int
     let `private`: Bool
     
     enum CodingKeys: String, CodingKey {
         case id
-        case fullName = "full_name"
+        case name
         case description
+        case starsCount = "stargazers_count"
+        case forksCount = "forks_count"
         case `private`
     }
 }
@@ -24,8 +28,10 @@ struct Repository: Codable {
 extension Repository {
     static var preview: Repository {
         Repository(id: 0,
-                   fullName: "Test Repository",
+                   name: "Test Repository",
                    description: "This is some long description. This is some long description.",
+                   starsCount: 10,
+                   forksCount: 68,
                    private: false)
     }
 }
