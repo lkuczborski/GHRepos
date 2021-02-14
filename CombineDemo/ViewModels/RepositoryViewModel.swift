@@ -23,6 +23,10 @@ final class RepositoryViewModel: Identifiable {
     var description: String? {
         model.description
     }
-    
-    
+}
+
+extension RepositoryViewModel {
+    static var preview: RepositoryViewModel {
+        RepositoryViewModel(Repository.preview)
+    }
 }

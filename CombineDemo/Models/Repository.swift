@@ -20,3 +20,12 @@ struct Repository: Codable {
         case `private`
     }
 }
+
+extension Repository {
+    static var preview: Repository {
+        Repository(id: 0,
+                   fullName: "Test Repository",
+                   description: "This is some long description. This is some long description.",
+                   private: false)
+    }
+}

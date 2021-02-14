@@ -11,29 +11,22 @@ struct ContentView: View {
         
     @StateObject var viewModel = RepositoryListViewModel()
     
+    var loadingText: some View {
+        Text("Loading repos...")
+            .title()
+    }
+    
     var body: some View {
         if viewModel.repositories.isEmpty {
-            Text("Loading repos...")
-                .font(.title3)
-                .padding()
+            loadingText
                 .onAppear(perform: {
                     viewModel.getRepositories(for: "apple")
                 })
         } else {
             ScrollView {
                 LazyVStack {
-                    ForEach(viewModel.repositories) { repo in
-                        VStack {
-                            Text(repo.name)
-                                .font(.headline)
-                                .padding()
-                            if let description = repo.description {
-                                Text(description)
-                                    .font(.subheadline)
-                                    .padding()
-                            }
-                        }
-                    }
+                    ForEach(viewModel.repositories,
+                            content: RepositoryRow.init)
                 }
             }
         }

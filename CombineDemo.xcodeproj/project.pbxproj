@@ -17,6 +17,8 @@
 		8BDF252C2524782D00C88C54 /* RepositoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF252B2524782D00C88C54 /* RepositoryListViewModel.swift */; };
 		8BDF25312524789800C88C54 /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF25302524789800C88C54 /* GitHubService.swift */; };
 		8BDF25392524A0A300C88C54 /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF25382524A0A300C88C54 /* RepositoryViewModel.swift */; };
+		AB6B3DE225D94F5100A8FD5C /* RepositoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B3DE125D94F5100A8FD5C /* RepositoryRow.swift */; };
+		AB6B3DF425D9538D00A8FD5C /* Text+Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B3DF325D9538D00A8FD5C /* Text+Styling.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		8BDF252B2524782D00C88C54 /* RepositoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListViewModel.swift; sourceTree = "<group>"; };
 		8BDF25302524789800C88C54 /* GitHubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubService.swift; sourceTree = "<group>"; };
 		8BDF25382524A0A300C88C54 /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
+		AB6B3DE125D94F5100A8FD5C /* RepositoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryRow.swift; sourceTree = "<group>"; };
+		AB6B3DF325D9538D00A8FD5C /* Text+Styling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Styling.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,14 +107,16 @@
 		8BDF24F42524702500C88C54 /* CombineDemo */ = {
 			isa = PBXGroup;
 			children = (
-				8BDF25422524A0C400C88C54 /* Networking */,
-				8BDF25412524A0BF00C88C54 /* ViewModel */,
-				8BDF25402524A0BA00C88C54 /* Model */,
+				8BDF24FE2524702600C88C54 /* Info.plist */,
 				8BDF24F52524702500C88C54 /* CombineDemoApp.swift */,
 				8BDF24F72524702500C88C54 /* ContentView.swift */,
 				8BDF24F92524702600C88C54 /* Assets.xcassets */,
-				8BDF24FE2524702600C88C54 /* Info.plist */,
 				8BDF24FB2524702600C88C54 /* Preview Content */,
+				8BDF25422524A0C400C88C54 /* Networking */,
+				8BDF25402524A0BA00C88C54 /* Models */,
+				8BDF25412524A0BF00C88C54 /* ViewModels */,
+				AB6B3DD525D94E5E00A8FD5C /* Views */,
+				AB6B3DE925D9531D00A8FD5C /* Styling */,
 			);
 			path = CombineDemo;
 			sourceTree = "<group>";
@@ -141,21 +147,21 @@
 			path = CombineDemoUITests;
 			sourceTree = "<group>";
 		};
-		8BDF25402524A0BA00C88C54 /* Model */ = {
+		8BDF25402524A0BA00C88C54 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				8BDF2523252473A400C88C54 /* Repository.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		8BDF25412524A0BF00C88C54 /* ViewModel */ = {
+		8BDF25412524A0BF00C88C54 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				8BDF25382524A0A300C88C54 /* RepositoryViewModel.swift */,
 				8BDF252B2524782D00C88C54 /* RepositoryListViewModel.swift */,
 			);
-			path = ViewModel;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		8BDF25422524A0C400C88C54 /* Networking */ = {
@@ -164,6 +170,22 @@
 				8BDF25302524789800C88C54 /* GitHubService.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		AB6B3DD525D94E5E00A8FD5C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AB6B3DE125D94F5100A8FD5C /* RepositoryRow.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AB6B3DE925D9531D00A8FD5C /* Styling */ = {
+			isa = PBXGroup;
+			children = (
+				AB6B3DF325D9538D00A8FD5C /* Text+Styling.swift */,
+			);
+			path = Styling;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,9 +318,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BDF25312524789800C88C54 /* GitHubService.swift in Sources */,
+				AB6B3DE225D94F5100A8FD5C /* RepositoryRow.swift in Sources */,
 				8BDF252C2524782D00C88C54 /* RepositoryListViewModel.swift in Sources */,
 				8BDF25392524A0A300C88C54 /* RepositoryViewModel.swift in Sources */,
 				8BDF24F82524702500C88C54 /* ContentView.swift in Sources */,
+				AB6B3DF425D9538D00A8FD5C /* Text+Styling.swift in Sources */,
 				8BDF2524252473A400C88C54 /* Repository.swift in Sources */,
 				8BDF24F62524702500C88C54 /* CombineDemoApp.swift in Sources */,
 			);
