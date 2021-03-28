@@ -8,7 +8,11 @@
 import Foundation
 import Combine
 
-final class GitHubService {
+protocol APIService {
+    func getRepositoryList(for user: String, completionHandler: @escaping (Result<[Repository], Error>) -> Void)
+}
+
+final class GitHubService: APIService {
     
     static let baseUrl: String = "https://api.github.com"
     

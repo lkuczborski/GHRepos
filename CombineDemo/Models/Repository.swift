@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Repository: Decodable {
+struct Repository: Decodable, Equatable {
     let id: Int
     let name: String
     let description: String?
@@ -26,7 +26,7 @@ struct Repository: Decodable {
 }
 
 extension Repository {
-    static var preview: Repository {
+    static var mock: Repository {
         Repository(id: 0,
                    name: "Test Repository",
                    description: "This is some long description. This is some long description.",

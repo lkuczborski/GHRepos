@@ -8,7 +8,6 @@
 import Foundation
 
 final class RepositoryViewModel: Identifiable {
-    
     let model: Repository
     
     init(_ model: Repository) {
@@ -34,11 +33,16 @@ final class RepositoryViewModel: Identifiable {
     var isPrivate: Bool {
         model.private
     }
-    
+}
+
+extension RepositoryViewModel: Equatable {
+    static func == (lhs: RepositoryViewModel, rhs: RepositoryViewModel) -> Bool {
+        lhs.model == rhs.model
+    }
 }
 
 extension RepositoryViewModel {
-    static var preview: RepositoryViewModel {
-        RepositoryViewModel(Repository.preview)
+    static var mock: RepositoryViewModel {
+        RepositoryViewModel(Repository.mock)
     }
 }

@@ -11,25 +11,18 @@
 		8BDF24F82524702500C88C54 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF24F72524702500C88C54 /* ContentView.swift */; };
 		8BDF24FA2524702600C88C54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BDF24F92524702600C88C54 /* Assets.xcassets */; };
 		8BDF24FD2524702600C88C54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BDF24FC2524702600C88C54 /* Preview Assets.xcassets */; };
-		8BDF25082524702600C88C54 /* CombineDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF25072524702600C88C54 /* CombineDemoTests.swift */; };
-		8BDF25132524702600C88C54 /* CombineDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF25122524702600C88C54 /* CombineDemoUITests.swift */; };
+		8BDF25082524702600C88C54 /* RespositoryListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF25072524702600C88C54 /* RespositoryListViewModelTests.swift */; };
 		8BDF2524252473A400C88C54 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF2523252473A400C88C54 /* Repository.swift */; };
 		8BDF252C2524782D00C88C54 /* RepositoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF252B2524782D00C88C54 /* RepositoryListViewModel.swift */; };
 		8BDF25312524789800C88C54 /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF25302524789800C88C54 /* GitHubService.swift */; };
 		8BDF25392524A0A300C88C54 /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDF25382524A0A300C88C54 /* RepositoryViewModel.swift */; };
+		AB5E7604261116650036837C /* GitHubServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5E75FA261110910036837C /* GitHubServiceMock.swift */; };
 		AB6B3DE225D94F5100A8FD5C /* RepositoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B3DE125D94F5100A8FD5C /* RepositoryRow.swift */; };
 		AB6B3DF425D9538D00A8FD5C /* Text+Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B3DF325D9538D00A8FD5C /* Text+Styling.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		8BDF25042524702600C88C54 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8BDF24EA2524702500C88C54 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8BDF24F12524702500C88C54;
-			remoteInfo = CombineDemo;
-		};
-		8BDF250F2524702600C88C54 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8BDF24EA2524702500C88C54 /* Project object */;
 			proxyType = 1;
@@ -46,15 +39,13 @@
 		8BDF24FC2524702600C88C54 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8BDF24FE2524702600C88C54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BDF25032524702600C88C54 /* CombineDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CombineDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8BDF25072524702600C88C54 /* CombineDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineDemoTests.swift; sourceTree = "<group>"; };
+		8BDF25072524702600C88C54 /* RespositoryListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RespositoryListViewModelTests.swift; sourceTree = "<group>"; };
 		8BDF25092524702600C88C54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8BDF250E2524702600C88C54 /* CombineDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CombineDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8BDF25122524702600C88C54 /* CombineDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineDemoUITests.swift; sourceTree = "<group>"; };
-		8BDF25142524702600C88C54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BDF2523252473A400C88C54 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		8BDF252B2524782D00C88C54 /* RepositoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListViewModel.swift; sourceTree = "<group>"; };
 		8BDF25302524789800C88C54 /* GitHubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubService.swift; sourceTree = "<group>"; };
 		8BDF25382524A0A300C88C54 /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
+		AB5E75FA261110910036837C /* GitHubServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubServiceMock.swift; sourceTree = "<group>"; };
 		AB6B3DE125D94F5100A8FD5C /* RepositoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryRow.swift; sourceTree = "<group>"; };
 		AB6B3DF325D9538D00A8FD5C /* Text+Styling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Styling.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,13 +65,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8BDF250B2524702600C88C54 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -89,7 +73,6 @@
 			children = (
 				8BDF24F42524702500C88C54 /* CombineDemo */,
 				8BDF25062524702600C88C54 /* CombineDemoTests */,
-				8BDF25112524702600C88C54 /* CombineDemoUITests */,
 				8BDF24F32524702500C88C54 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,7 +82,6 @@
 			children = (
 				8BDF24F22524702500C88C54 /* CombineDemo.app */,
 				8BDF25032524702600C88C54 /* CombineDemoTests.xctest */,
-				8BDF250E2524702600C88C54 /* CombineDemoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,6 +98,7 @@
 				8BDF25402524A0BA00C88C54 /* Models */,
 				8BDF25412524A0BF00C88C54 /* ViewModels */,
 				AB6B3DD525D94E5E00A8FD5C /* Views */,
+				AB5E75F92611107A0036837C /* Mocks */,
 				AB6B3DE925D9531D00A8FD5C /* Styling */,
 			);
 			path = CombineDemo;
@@ -132,19 +115,10 @@
 		8BDF25062524702600C88C54 /* CombineDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				8BDF25072524702600C88C54 /* CombineDemoTests.swift */,
+				8BDF25072524702600C88C54 /* RespositoryListViewModelTests.swift */,
 				8BDF25092524702600C88C54 /* Info.plist */,
 			);
 			path = CombineDemoTests;
-			sourceTree = "<group>";
-		};
-		8BDF25112524702600C88C54 /* CombineDemoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				8BDF25122524702600C88C54 /* CombineDemoUITests.swift */,
-				8BDF25142524702600C88C54 /* Info.plist */,
-			);
-			path = CombineDemoUITests;
 			sourceTree = "<group>";
 		};
 		8BDF25402524A0BA00C88C54 /* Models */ = {
@@ -170,6 +144,14 @@
 				8BDF25302524789800C88C54 /* GitHubService.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		AB5E75F92611107A0036837C /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				AB5E75FA261110910036837C /* GitHubServiceMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		AB6B3DD525D94E5E00A8FD5C /* Views */ = {
@@ -226,24 +208,6 @@
 			productReference = 8BDF25032524702600C88C54 /* CombineDemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		8BDF250D2524702600C88C54 /* CombineDemoUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8BDF251D2524702600C88C54 /* Build configuration list for PBXNativeTarget "CombineDemoUITests" */;
-			buildPhases = (
-				8BDF250A2524702600C88C54 /* Sources */,
-				8BDF250B2524702600C88C54 /* Frameworks */,
-				8BDF250C2524702600C88C54 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8BDF25102524702600C88C54 /* PBXTargetDependency */,
-			);
-			name = CombineDemoUITests;
-			productName = CombineDemoUITests;
-			productReference = 8BDF250E2524702600C88C54 /* CombineDemoUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -257,10 +221,6 @@
 						CreatedOnToolsVersion = 12.0;
 					};
 					8BDF25022524702600C88C54 = {
-						CreatedOnToolsVersion = 12.0;
-						TestTargetID = 8BDF24F12524702500C88C54;
-					};
-					8BDF250D2524702600C88C54 = {
 						CreatedOnToolsVersion = 12.0;
 						TestTargetID = 8BDF24F12524702500C88C54;
 					};
@@ -281,7 +241,6 @@
 			targets = (
 				8BDF24F12524702500C88C54 /* CombineDemo */,
 				8BDF25022524702600C88C54 /* CombineDemoTests */,
-				8BDF250D2524702600C88C54 /* CombineDemoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -303,13 +262,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8BDF250C2524702600C88C54 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -323,6 +275,7 @@
 				8BDF25392524A0A300C88C54 /* RepositoryViewModel.swift in Sources */,
 				8BDF24F82524702500C88C54 /* ContentView.swift in Sources */,
 				AB6B3DF425D9538D00A8FD5C /* Text+Styling.swift in Sources */,
+				AB5E7604261116650036837C /* GitHubServiceMock.swift in Sources */,
 				8BDF2524252473A400C88C54 /* Repository.swift in Sources */,
 				8BDF24F62524702500C88C54 /* CombineDemoApp.swift in Sources */,
 			);
@@ -332,15 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BDF25082524702600C88C54 /* CombineDemoTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8BDF250A2524702600C88C54 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8BDF25132524702600C88C54 /* CombineDemoUITests.swift in Sources */,
+				8BDF25082524702600C88C54 /* RespositoryListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,11 +296,6 @@
 			isa = PBXTargetDependency;
 			target = 8BDF24F12524702500C88C54 /* CombineDemo */;
 			targetProxy = 8BDF25042524702600C88C54 /* PBXContainerItemProxy */;
-		};
-		8BDF25102524702600C88C54 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8BDF24F12524702500C88C54 /* CombineDemo */;
-			targetProxy = 8BDF250F2524702600C88C54 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -564,46 +504,6 @@
 			};
 			name = Release;
 		};
-		8BDF251E2524702600C88C54 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B9SKU7647H;
-				INFOPLIST_FILE = CombineDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kuczborski.CombineDemoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = CombineDemo;
-			};
-			name = Debug;
-		};
-		8BDF251F2524702600C88C54 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B9SKU7647H;
-				INFOPLIST_FILE = CombineDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kuczborski.CombineDemoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = CombineDemo;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -630,15 +530,6 @@
 			buildConfigurations = (
 				8BDF251B2524702600C88C54 /* Debug */,
 				8BDF251C2524702600C88C54 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8BDF251D2524702600C88C54 /* Build configuration list for PBXNativeTarget "CombineDemoUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8BDF251E2524702600C88C54 /* Debug */,
-				8BDF251F2524702600C88C54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

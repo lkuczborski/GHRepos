@@ -10,9 +10,9 @@ import Foundation
 final class RepositoryListViewModel: ObservableObject {
 
     @Published var repositories = [RepositoryViewModel]()
-    private let service: GitHubService
+    private let service: APIService
     
-    init(service: GitHubService = GitHubService.shared) {
+    init(service: APIService = GitHubService.shared) {
         self.service = service
     }
         

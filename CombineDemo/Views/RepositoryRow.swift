@@ -45,6 +45,6 @@ struct RepositoryRow: View {
 
 struct RepositoryView_Previews: PreviewProvider {
     static var previews: some View {
-        RepositoryRow(viewModel: RepositoryViewModel.preview)
+        RepositoryRow(viewModel: RepositoryViewModel.mock)
     }
 }
