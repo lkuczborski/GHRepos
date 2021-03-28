@@ -1,3 +1,4 @@
 # CombineDemo
 Sample project utilizing GitHub API to fetch repositories for a given user. Uses MVVM + Combine + SwiftUI 2.0.
-<img width="1294" alt="CombineDemo" src="https://user-images.githubusercontent.com/6804537/107750902-f0b77980-6d1c-11eb-968b-0a6f30fb8641.png">
+<img width="1293" alt="Screen Shot 2021-02-14 at 21 22 00" src="https://user-images.githubusercontent.com/6804537/107888259-739e2700-6f0b-11eb-9a80-185a2904b50b.png">
+
