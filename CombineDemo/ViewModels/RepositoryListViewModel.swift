@@ -27,3 +27,9 @@ final class RepositoryListViewModel: ObservableObject {
         }
     }
 }
+
+extension RepositoryListViewModel {
+    static var mock: RepositoryListViewModel {
+        RepositoryListViewModel(service: GitHubServiceMock())
+    }
+}

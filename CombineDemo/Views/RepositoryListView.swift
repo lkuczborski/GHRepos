@@ -7,9 +7,13 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct RepositoryListView: View {
         
-    @StateObject var viewModel = RepositoryListViewModel()
+    @ObservedObject private var viewModel: RepositoryListViewModel
+    
+    init(viewModel: RepositoryListViewModel = RepositoryListViewModel()) {
+        self.viewModel = viewModel
+    }
     
     var loadingText: some View {
         Text("Loading repos...")
@@ -33,8 +37,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct RepositoryListView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        RepositoryListView(viewModel: RepositoryListViewModel.mock)
     }
 }

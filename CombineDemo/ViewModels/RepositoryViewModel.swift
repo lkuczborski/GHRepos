@@ -10,7 +10,7 @@ import Foundation
 final class RepositoryViewModel: Identifiable {
     let model: Repository
     
-    init(_ model: Repository) {
+    init(model: Repository) {
         self.model = model
     }
     
@@ -43,6 +43,6 @@ extension RepositoryViewModel: Equatable {
 
 extension RepositoryViewModel {
     static var mock: RepositoryViewModel {
-        RepositoryViewModel(Repository.mock)
+        RepositoryViewModel(model: Repository.mock)
     }
 }
