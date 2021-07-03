@@ -1,5 +1,6 @@
 # GHRepos
 Sample project utilizing GitHub API to fetch repositories for a given user. SwiftUI 3.0 (iOS 15) + MVVM.
-<img width="524" alt="Screen Shot 2021-04-25 at 10 50 53" src="https://user-images.githubusercontent.com/6804537/115987190-3f528100-a5b4-11eb-9694-f5f0f243c297.png">
+<img width="564" alt="Screen Shot 2021-07-03 at 10 42 36" src="https://user-images.githubusercontent.com/6804537/124348650-65675380-dbeb-11eb-947b-d09c12c4bbd6.png">
+
 
 
