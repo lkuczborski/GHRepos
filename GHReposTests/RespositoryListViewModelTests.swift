@@ -14,6 +14,7 @@ final class RespositoryListViewModelTests: XCTestCase {
     var serviceMock: GitHubServiceMock!
 
     override func setUp() {
+        super.setUp()
         serviceMock = GitHubServiceMock()
         sut = RepositoryListViewModel(service: serviceMock)
     }
@@ -21,6 +22,7 @@ final class RespositoryListViewModelTests: XCTestCase {
     override func tearDown() {
         sut = nil
         serviceMock = nil
+        super.tearDown()
     }
 
     func test_getRepositories() async throws {
