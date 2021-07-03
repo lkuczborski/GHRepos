@@ -5,7 +5,7 @@
 //  Created by Lukasz Kuczborski on 30/09/2020.
 //
 
-@testable import CombineDemo
+@testable import GHRepos
 import XCTest
 
 final class RespositoryListViewModelTests: XCTestCase {
@@ -23,12 +23,12 @@ final class RespositoryListViewModelTests: XCTestCase {
         serviceMock = nil
     }
 
-    func test_getRepositories() {
+    func test_getRepositories() async throws {
         // Arrange
         let testUser = "test"
         
         // Act
-        sut.getRepositories(for: testUser)
+        try await sut.getRespositories(for: testUser)
         
         // Asert
         XCTAssertEqual(serviceMock.user, testUser)
