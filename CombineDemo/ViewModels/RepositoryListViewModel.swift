@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class RepositoryListViewModel: ObservableObject {
 
@@ -16,15 +17,9 @@ final class RepositoryListViewModel: ObservableObject {
         self.service = service
     }
         
-    func getRepositories(for user: String) {
-        service.getRepositoryList(for: user) { result in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .success(let repositories):
-                self.repositories = repositories.map(RepositoryViewModel.init)
-            }
-        }
+    func getRespositories(for user: String) async throws {
+        let repositories = try await service.getRepositoryList(for: user)
+        self.repositories = repositories.map(RepositoryViewModel.init)
     }
 }
 

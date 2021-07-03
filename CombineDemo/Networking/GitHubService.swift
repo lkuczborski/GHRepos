@@ -6,55 +6,35 @@
 //
 
 import Foundation
-import Combine
 
 protocol APIService {
-    func getRepositoryList(for user: String, completionHandler: @escaping (Result<[Repository], Error>) -> Void)
+    func getRepositoryList(for user: String) async throws -> [Repository]
 }
 
 final class GitHubService: APIService {
     
     static let baseUrl: String = "https://api.github.com"
     
-    enum Paths {
+    private enum Paths {
         static let users: String = "/users"
         static let repositories: String = "/repos"
-    }
-    
-    let urlSession: URLSession
-    var bag = Set<AnyCancellable>()
-    
-    init(urlSession: URLSession = URLSession.shared) {
-        self.urlSession = urlSession
     }
     
     static var shared: GitHubService {
         GitHubService()
     }
     
-    func getRepositoryList(for user: String, completionHandler: @escaping (Result<[Repository], Error>) -> Void) {
-        let urlString = "\(GitHubService.baseUrl)\(Paths.users)/\(user)\(Paths.repositories)"
-        let url = URL(string: urlString)!
-        let decoder = JSONDecoder()
-        urlSession
-            .dataTaskPublisher(for: url)
-            .map(\.data)
-            .decode(type: [Repository].self, decoder: decoder)
-            .receive(on: DispatchQueue.main)
-            .sink(
-                receiveCompletion: { completion in
-                    switch completion {
-                    case .failure(let error):
-                        completionHandler(.failure(error))
-                    case .finished:
-                        break
-                    }
-                },
-                receiveValue: { repos in
-                    completionHandler(.success(repos))
-                })
-            .store(in: &bag)
-            
+    let urlSession: URLSession
+    
+    init(urlSession: URLSession = URLSession.shared) {
+        self.urlSession = urlSession
     }
     
+    func getRepositoryList(for user: String) async throws -> [Repository] {
+        let urlString = "\(Self.baseUrl)\(Paths.users)/\(user)\(Paths.repositories)"
+        guard let url = URL(string: urlString) else { fatalError() }
+        let (data, _) = try await urlSession.data(from: url)
+        let decoder = JSONDecoder()
+        return try decoder.decode([Repository].self, from: data)
+    }
 }

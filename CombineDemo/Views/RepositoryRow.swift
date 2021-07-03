@@ -14,11 +14,9 @@ struct RepositoryRow: View {
         HStack {
             Spacer()
             VStack {
-                (Text(Image(systemName: viewModel.isPrivate ? "lock" : "lock.open")) +
-                Text(" \(viewModel.name)"))
+                Text(viewModel.name)
                     .titleBold()
-                    .minimumScaleFactor(0.5)
-                    .lineLimit(1)
+                    .multilineTextAlignment(.center)
                     
                 HStack {
                     Text(Image(systemName: "star")) + Text(" \(viewModel.starsCount.description)")
@@ -37,9 +35,7 @@ struct RepositoryRow: View {
             .padding([.top, .bottom])
             Spacer()
         }
-        .background(Color.black.opacity(0.05))
-        .cornerRadius(6)
-        .padding([.leading, .trailing])
+
     }
 }
 

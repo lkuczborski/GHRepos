@@ -16,4 +16,8 @@ final class GitHubServiceMock: APIService {
         getRepositoryListCallsCount += 1
         completionHandler(.success([Repository.mock]))
     }
+    
+    func getRepositoryList(for user: String) async throws -> [Repository] {
+        return [Repository.mock]
+    }
 }
