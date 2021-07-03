@@ -16,8 +16,7 @@ struct RepositoryListView: View {
     }
     
     var body: some View {
-        VStack {
-            userTextField
+        NavigationView {
             listView
         }
         .onAppear {
@@ -35,19 +34,23 @@ struct RepositoryListView: View {
             .onSubmit {
                 getRepositories()
             }
-            .padding([.leading, .trailing])
+            .padding([.top, .bottom], 10)
     }
     
     private var listView: some View {
         List {
-            ForEach(viewModel.repositories) { repo in
-                RepositoryRow(viewModel: repo)
+            Section(header: userTextField) {
+                ForEach(viewModel.repositories) { repo in
+                    RepositoryRow(viewModel: repo)
+                }
             }
         }
         .listStyle(.plain)
+        .listSectionSeparator(.hidden)
         .refreshable {
             getRepositories()
         }
+        .navigationTitle("Repositories")
     }
     
     // MARK: - Actions
