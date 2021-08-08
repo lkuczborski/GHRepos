@@ -56,7 +56,7 @@ struct RepositoryListView: View {
     // MARK: - Actions
     
     func getRepositories() {
-        async {
+        Task {
             try await viewModel.getRespositories(for: user)
         }
     }
