@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct Repository: Decodable, Equatable {
+struct Repository: Decodable, Equatable, Sendable {
     let id: Int
     let name: String
     let description: String?
     let starsCount: Int
     let forksCount: Int
     let `private`: Bool
-    
+
     enum CodingKeys: String, CodingKey {
         case id
         case name

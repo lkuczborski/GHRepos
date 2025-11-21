@@ -7,10 +7,10 @@
 
 import Foundation
 
-final class GitHubServiceMock: APIService {
+final class GitHubServiceMock: APIService, @unchecked Sendable {
     var user: String = ""
     var getRepositoryListCallsCount: Int = 0
-    
+
     func getRepositoryList(for user: String) async throws -> [Repository] {
         self.user = user
         getRepositoryListCallsCount += 1

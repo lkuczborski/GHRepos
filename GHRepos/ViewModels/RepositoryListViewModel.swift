@@ -8,15 +8,16 @@
 import Foundation
 import UIKit
 
+@MainActor
 final class RepositoryListViewModel: ObservableObject {
 
     @Published var repositories = [RepositoryViewModel]()
     private let service: APIService
-    
+
     init(service: APIService = GitHubService.shared) {
         self.service = service
     }
-        
+
     func getRespositories(for user: String) async throws {
         let repositories = try await service.getRepositoryList(for: user)
         self.repositories = repositories.map(RepositoryViewModel.init)
