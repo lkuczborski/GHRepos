@@ -7,29 +7,29 @@
 
 import Foundation
 
-final class RepositoryViewModel: Identifiable {
+final class RepositoryViewModel: Identifiable, Sendable {
     let model: Repository
-    
+
     init(model: Repository) {
         self.model = model
     }
-    
+
     var name: String {
         model.name
     }
-    
+
     var description: String? {
         model.description
     }
-    
+
     var starsCount: Int {
         model.starsCount
     }
-    
+
     var forksCount: Int {
         model.forksCount
     }
-    
+
     var isPrivate: Bool {
         model.private
     }
