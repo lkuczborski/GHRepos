@@ -7,7 +7,8 @@
 
 import Foundation
 
-actor GitHubServiceMock: APIService {
+@MainActor
+final class GitHubServiceMock: APIService {
     var user: String = ""
     var getRepositoryListCallsCount: Int = 0
 
