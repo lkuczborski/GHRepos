@@ -11,7 +11,7 @@ protocol APIService: Sendable {
     func getRepositoryList(for user: String) async throws -> [Repository]
 }
 
-final class GitHubService: APIService, @unchecked Sendable {
+final class GitHubService: APIService, Sendable {
 
     static let baseUrl: String = "https://api.github.com"
 

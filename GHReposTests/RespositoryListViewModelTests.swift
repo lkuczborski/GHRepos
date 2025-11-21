@@ -8,6 +8,7 @@
 @testable import GHRepos
 import XCTest
 
+@MainActor
 final class RespositoryListViewModelTests: XCTestCase {
 
     var sut: RepositoryListViewModel!
@@ -28,13 +29,16 @@ final class RespositoryListViewModelTests: XCTestCase {
     func test_getRepositories() async throws {
         // Arrange
         let testUser = "test"
-        
+
         // Act
         try await sut.getRespositories(for: testUser)
-        
-        // Asert
-        XCTAssertEqual(serviceMock.user, testUser)
-        XCTAssertEqual(serviceMock.getRepositoryListCallsCount, 1)
+
+        // Assert
+        let capturedUser = await serviceMock.user
+        let callsCount = await serviceMock.getRepositoryListCallsCount
+
+        XCTAssertEqual(capturedUser, testUser)
+        XCTAssertEqual(callsCount, 1)
         XCTAssertEqual(sut.repositories.count, 1)
         XCTAssertEqual(sut.repositories.first, RepositoryViewModel.mock)
     }

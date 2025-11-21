@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class GitHubServiceMock: APIService, @unchecked Sendable {
+actor GitHubServiceMock: APIService {
     var user: String = ""
     var getRepositoryListCallsCount: Int = 0
 
