@@ -80,7 +80,7 @@ struct RepositoryListView: View {
     private var suggestionsView: some View {
         VStack(spacing: 0) {
             Spacer()
-                .frame(height: 110) // Offset below the textfield
+                .frame(height: 60) // Offset below the textfield
 
             VStack(alignment: .leading, spacing: 0) {
                 ForEach(suggestions, id: \.self) { suggestion in
@@ -88,9 +88,11 @@ struct RepositoryListView: View {
                         selectSuggestion(suggestion)
                     }) {
                         HStack {
-                            Image(systemName: "clock.arrow.circlepath")
-                                .foregroundColor(.gray)
-                                .font(.system(size: 14))
+                            if isFromHistory(suggestion) {
+                                Image(systemName: "clock.arrow.circlepath")
+                                    .foregroundColor(.gray)
+                                    .font(.system(size: 14))
+                            }
                             Text(suggestion)
                                 .foregroundColor(.primary)
                             Spacer()
@@ -102,7 +104,7 @@ struct RepositoryListView: View {
 
                     if suggestion != suggestions.last {
                         Divider()
-                            .padding(.leading, 40)
+                            .padding(.leading, isFromHistory(suggestion) ? 40 : 12)
                     }
                 }
             }
@@ -113,6 +115,10 @@ struct RepositoryListView: View {
 
             Spacer()
         }
+    }
+
+    private func isFromHistory(_ suggestion: String) -> Bool {
+        searchHistory.recentSearches.contains(where: { $0.lowercased() == suggestion.lowercased() })
     }
     
     // MARK: - Actions
