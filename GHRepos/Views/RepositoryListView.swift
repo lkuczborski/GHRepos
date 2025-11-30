@@ -13,10 +13,13 @@ struct RepositoryListView: View {
     @State var user: String = "apple"
     @State private var suggestions: [String] = []
     @State private var showSuggestions = false
+    @State private var debounceTask: Task<Void, Never>?
     @FocusState private var isTextFieldFocused: Bool
+    private let service: APIService
 
-    init(viewModel: RepositoryListViewModel = RepositoryListViewModel()) {
+    init(viewModel: RepositoryListViewModel = RepositoryListViewModel(), service: APIService = GitHubService.shared) {
         self.viewModel = viewModel
+        self.service = service
     }
 
     var body: some View {
@@ -121,12 +124,50 @@ struct RepositoryListView: View {
     }
 
     private func handleTextChange(_ newValue: String) {
-        // Show suggestions immediately as user types
-        suggestions = searchHistory.getSuggestions(for: newValue)
+        // Cancel previous debounce task
+        debounceTask?.cancel()
+
+        // Show search history suggestions immediately
+        let historySuggestions = searchHistory.getSuggestions(for: newValue)
+        suggestions = historySuggestions
         showSuggestions = !newValue.isEmpty && isTextFieldFocused
+
+        // Debounce the GitHub user search (300ms delay)
+        debounceTask = Task {
+            try? await Task.sleep(nanoseconds: 300_000_000) // 300ms
+
+            guard !Task.isCancelled else { return }
+
+            if !newValue.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                await searchGitHubUsers(query: newValue)
+            }
+        }
+    }
+
+    private func searchGitHubUsers(query: String) async {
+        do {
+            let users = try await service.searchUsers(query: query)
+            let usernames = users.map { $0.login }
+
+            // Combine search history with GitHub users, avoiding duplicates
+            let historySuggestions = searchHistory.getSuggestions(for: query)
+            var combinedSuggestions = historySuggestions
+
+            for username in usernames {
+                if !combinedSuggestions.contains(where: { $0.lowercased() == username.lowercased() }) {
+                    combinedSuggestions.append(username)
+                }
+            }
+
+            suggestions = combinedSuggestions
+        } catch {
+            // On error, keep showing search history suggestions
+            print("Error searching users: \(error)")
+        }
     }
 
     private func handleSubmit() {
+        debounceTask?.cancel()
         showSuggestions = false
 
         let trimmedUser = user.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -137,6 +178,7 @@ struct RepositoryListView: View {
     }
 
     private func selectSuggestion(_ suggestion: String) {
+        debounceTask?.cancel()
         user = suggestion
         showSuggestions = false
         searchHistory.addSearch(suggestion)

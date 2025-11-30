@@ -17,4 +17,8 @@ final class GitHubServiceMock: APIService {
         getRepositoryListCallsCount += 1
         return [Repository.mock]
     }
+
+    func searchUsers(query: String) async throws -> [User] {
+        return []
+    }
 }

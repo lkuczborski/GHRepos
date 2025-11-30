@@ -9,6 +9,7 @@ import Foundation
 
 protocol APIService: Sendable {
     func getRepositoryList(for user: String) async throws -> [Repository]
+    func searchUsers(query: String) async throws -> [User]
 }
 
 final class GitHubService: APIService, Sendable {
@@ -18,6 +19,7 @@ final class GitHubService: APIService, Sendable {
     private enum Paths {
         static let users: String = "/users"
         static let repositories: String = "/repos"
+        static let searchUsers: String = "/search/users"
     }
 
     static var shared: GitHubService {
@@ -36,5 +38,17 @@ final class GitHubService: APIService, Sendable {
         let (data, _) = try await urlSession.data(from: url)
         let decoder = JSONDecoder()
         return try decoder.decode([Repository].self, from: data)
+    }
+
+    func searchUsers(query: String) async throws -> [User] {
+        guard !query.isEmpty else { return [] }
+
+        let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? query
+        let urlString = "\(Self.baseUrl)\(Paths.searchUsers)?q=\(encodedQuery)&per_page=10"
+        guard let url = URL(string: urlString) else { fatalError() }
+        let (data, _) = try await urlSession.data(from: url)
+        let decoder = JSONDecoder()
+        let response = try decoder.decode(UserSearchResponse.self, from: data)
+        return response.items
     }
 }
