@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct RepositoryListView: View {
-    @ObservedObject private var viewModel: RepositoryListViewModel
-    @StateObject private var searchHistory = SearchHistory()
+    private var viewModel: RepositoryListViewModel
+    @State private var searchHistory = SearchHistory()
     @State var user: String = "apple"
     @State private var debounceTask: Task<Void, Never>?
     @State private var suggestions: [String] = []

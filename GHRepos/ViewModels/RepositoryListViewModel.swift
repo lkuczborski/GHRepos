@@ -7,11 +7,13 @@
 
 import Foundation
 import UIKit
+import Observation
 
 @MainActor
-final class RepositoryListViewModel: ObservableObject {
+@Observable
+final class RepositoryListViewModel {
 
-    @Published var repositories = [RepositoryViewModel]()
+    var repositories = [RepositoryViewModel]()
     private let service: APIService
 
     init(service: APIService = GitHubService.shared) {

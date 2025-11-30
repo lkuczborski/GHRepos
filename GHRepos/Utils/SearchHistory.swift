@@ -6,13 +6,15 @@
 //
 
 import Foundation
+import Observation
 
 @MainActor
-final class SearchHistory: ObservableObject {
+@Observable
+final class SearchHistory {
     private let userDefaultsKey = "github_user_search_history"
     private let maxHistoryCount = 10
 
-    @Published private(set) var recentSearches: [String] = []
+    private(set) var recentSearches: [String] = []
 
     init() {
         loadHistory()

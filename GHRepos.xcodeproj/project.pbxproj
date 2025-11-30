@@ -19,6 +19,7 @@
 		AB5E7604261116650036837C /* GitHubServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5E75FA261110910036837C /* GitHubServiceMock.swift */; };
 		AB6B3DE225D94F5100A8FD5C /* RepositoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B3DE125D94F5100A8FD5C /* RepositoryRow.swift */; };
 		AB6B3DF425D9538D00A8FD5C /* Text+Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B3DF325D9538D00A8FD5C /* Text+Styling.swift */; };
+		AC9A3E1A2B5C7D8E00F12345 /* SearchHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9A3E192B5C7D8E00F12345 /* SearchHistory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		AB5E75FA261110910036837C /* GitHubServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubServiceMock.swift; sourceTree = "<group>"; };
 		AB6B3DE125D94F5100A8FD5C /* RepositoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryRow.swift; sourceTree = "<group>"; };
 		AB6B3DF325D9538D00A8FD5C /* Text+Styling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Styling.swift"; sourceTree = "<group>"; };
+		AC9A3E192B5C7D8E00F12345 /* SearchHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				AB6B3DD525D94E5E00A8FD5C /* Views */,
 				AB5E75F92611107A0036837C /* Mocks */,
 				AB6B3DE925D9531D00A8FD5C /* Styling */,
+				AC9A3E182B5C7D7800F12345 /* Utils */,
 			);
 			path = GHRepos;
 			sourceTree = "<group>";
@@ -168,6 +171,14 @@
 				AB6B3DF325D9538D00A8FD5C /* Text+Styling.swift */,
 			);
 			path = Styling;
+			sourceTree = "<group>";
+		};
+		AC9A3E182B5C7D7800F12345 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AC9A3E192B5C7D8E00F12345 /* SearchHistory.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +289,7 @@
 				AB5E7604261116650036837C /* GitHubServiceMock.swift in Sources */,
 				8BDF2524252473A400C88C54 /* Repository.swift in Sources */,
 				8BDF24F62524702500C88C54 /* GHReposApp.swift in Sources */,
+				AC9A3E1A2B5C7D8E00F12345 /* SearchHistory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
