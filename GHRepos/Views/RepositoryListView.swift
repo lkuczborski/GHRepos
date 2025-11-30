@@ -11,7 +11,6 @@ struct RepositoryListView: View {
     private var viewModel: RepositoryListViewModel
     @State private var searchHistory = SearchHistory()
     @State var user: String = "apple"
-    @State private var debounceTask: Task<Void, Never>?
     @State private var suggestions: [String] = []
     @State private var showSuggestions = false
     @FocusState private var isTextFieldFocused: Bool
@@ -40,6 +39,7 @@ struct RepositoryListView: View {
     private var userTextField: some View {
         TextField("GitHub User", text: $user)
             .autocapitalization(.none)
+            .autocorrectionDisabled()
             .textFieldStyle(.roundedBorder)
             .multilineTextAlignment(.center)
             .focused($isTextFieldFocused)
@@ -121,28 +121,13 @@ struct RepositoryListView: View {
     }
 
     private func handleTextChange(_ newValue: String) {
-        // Cancel previous debounce task
-        debounceTask?.cancel()
-
         // Show suggestions immediately as user types
         suggestions = searchHistory.getSuggestions(for: newValue)
         showSuggestions = !newValue.isEmpty && isTextFieldFocused
-
-        // Debounce the repository fetch (500ms delay)
-        debounceTask = Task {
-            try? await Task.sleep(nanoseconds: 500_000_000) // 500ms
-
-            guard !Task.isCancelled else { return }
-
-            if !newValue.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                getRepositories()
-            }
-        }
     }
 
     private func handleSubmit() {
         showSuggestions = false
-        debounceTask?.cancel()
 
         let trimmedUser = user.trimmingCharacters(in: .whitespacesAndNewlines)
         if !trimmedUser.isEmpty {
@@ -154,7 +139,6 @@ struct RepositoryListView: View {
     private func selectSuggestion(_ suggestion: String) {
         user = suggestion
         showSuggestions = false
-        debounceTask?.cancel()
         searchHistory.addSearch(suggestion)
         getRepositories()
     }
